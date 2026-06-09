@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init *)",
+      "Bash(git remote *)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "Bash(lsof -ti:3001)",
+      "Bash(xargs kill *)",
+      "Bash(PORT=3002 npm run dev)",
+      "Bash(tee /tmp/dev-ref.log)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3002/)",
+      "Bash(tee /tmp/dev-mine.log)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"3000:%{http_code} 3002:%{http_code}\\\\n\" http://localhost:3000/ -o /dev/null)",
+      "Bash(curl -s -o /dev/null -w \"3002:%{http_code}\\\\n\" http://localhost:3002/)",
+      "Bash(curl -s http://localhost:3002/)",
+      "mcp__playwright__browser_evaluate",
+      "Bash(curl -s http://localhost:3000/_next/static/css/app/layout.css?v=1781012585768)",
+      "Bash(curl -s \"http://localhost:3000/_next/static/css/app/layout.css?v=1781012585768\")",
+      "Bash(lsof -ti:3000 -ti:3001 -ti:3002)"
+    ]
+  }
+}
