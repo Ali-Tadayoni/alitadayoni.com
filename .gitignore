@@ -1,5 +1,4 @@
 node_modules
-victoreke.com
 .next
 out
 .env*.local
@@ -7,3 +6,4 @@ out
 *.log
 .vercel
 next-env.d.ts
+context
