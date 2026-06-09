@@ -23,9 +23,8 @@ export type Job = {
   role: string;
   url?: string;
   logo: string;
-  startDate: string;
-  endDate: string;
-  description: string;
+  date: string;
+  bullets: string[];
 };
 
 export type Project = {
