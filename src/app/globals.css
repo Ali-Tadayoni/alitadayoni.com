@@ -49,3 +49,63 @@ h1, h2, h3, h4 {
   background-color: var(--color-primary-color);
   color: #0a0a0a;
 }
+
+/* Experience Timeline */
+@property --timeline-progress {
+  initial-value: 0;
+  inherits: true;
+  syntax: "<number>";
+}
+
+.timeline-axis {
+  background: color-mix(in oklab, currentColor 15%, transparent);
+}
+
+@supports (animation-timeline: view(block)) {
+  .timeline-axis {
+    animation: timeline-fill both linear;
+    animation-timeline: view(block);
+    animation-range: entry 15% exit 85%;
+    background: linear-gradient(
+      to bottom,
+      var(--color-primary-color) calc(var(--timeline-progress) * 1%),
+      color-mix(in oklab, currentColor 15%, transparent) calc(var(--timeline-progress) * 1%)
+    );
+  }
+}
+
+@supports (animation-timeline: view(block)) {
+  .timeline-story {
+    animation: timeline-reveal both linear;
+    animation-timeline: view(block);
+    animation-range: entry 20% cover 40%;
+    transform-origin: center center;
+  }
+}
+
+@keyframes timeline-fill {
+  from {
+    --timeline-progress: 0;
+  }
+  to {
+    --timeline-progress: 100;
+  }
+}
+
+@keyframes timeline-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-axis,
+  .timeline-story {
+    animation: none !important;
+  }
+}

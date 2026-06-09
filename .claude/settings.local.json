@@ -18,7 +18,10 @@
       "mcp__playwright__browser_evaluate",
       "Bash(curl -s http://localhost:3000/_next/static/css/app/layout.css?v=1781012585768)",
       "Bash(curl -s \"http://localhost:3000/_next/static/css/app/layout.css?v=1781012585768\")",
-      "Bash(lsof -ti:3000 -ti:3001 -ti:3002)"
+      "Bash(lsof -ti:3000 -ti:3001 -ti:3002)",
+      "Bash(git checkout *)",
+      "Bash(npx tsc *)",
+      "Bash(git add *)"
     ]
   }
 }
