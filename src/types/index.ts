@@ -27,13 +27,14 @@ export type Job = {
   bullets: string[];
 };
 
+import type { StaticImageData } from "next/image";
+
 export type Project = {
   slug: string;
   name: string;
-  tagline: string;
   description: string;
-  coverImage: string;
-  logo: string;
+  image: StaticImageData;
+  bgColor: string;
   liveUrl?: string;
   repoUrl?: string;
   tags: string[];

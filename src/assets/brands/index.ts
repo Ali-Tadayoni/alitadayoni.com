@@ -28,6 +28,7 @@ import react from "./react.svg";
 import redux from "./redux.svg";
 import sass from "./sass.svg";
 import stackOverflow from "./stack-overflow.svg";
+import supabase from "./supabase.svg";
 import tailwind from "./tailwind.svg";
 import typescript from "./typescript.svg";
 import vercelDark from "./vercel-icon-dark.svg";
@@ -66,6 +67,7 @@ export const brandIcons = {
   redux,
   sass,
   "stack-overflow": stackOverflow,
+  supabase,
   tailwind,
   typescript,
   "vercel-dark": vercelDark,

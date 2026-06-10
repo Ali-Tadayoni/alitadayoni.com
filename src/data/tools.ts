@@ -18,5 +18,6 @@ export const tools: Tool[] = [
   { name: "NPM", icon: "npm", url: "https://www.npmjs.com/" },
   { name: "Postman", icon: "postman", url: "https://www.postman.com/" },
   { name: "Stack Overflow", icon: "stack-overflow", url: "https://stackoverflow.com/" },
+  { name: "Supabase", icon: "supabase", url: "https://supabase.com/" },
   { name: "VS Code", icon: "vscode", url: "https://code.visualstudio.com/" },
 ];

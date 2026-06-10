@@ -11,7 +11,7 @@ export function PageHeading({ title, description, children }: PageHeadingProps) 
   return (
     <header className="mb-10">
       <Slide>
-        <h1 className="max-w-3xl font-incognito font-semibold tracking-tight sm:text-5xl text-3xl mb-6 lg:leading-[3.7rem]">
+        <h1 className="max-w-3xl font-incognito font-bold tracking-tight sm:text-5xl text-3xl mb-6 lg:leading-[3.7rem] bg-linear-to-r from-primary-color to-tertiary-color bg-clip-text text-transparent">
           {title}
         </h1>
         {description && (

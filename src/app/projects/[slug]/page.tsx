@@ -18,7 +18,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
   if (!project) return {};
-  return { title: project.name, description: project.tagline };
+  return { title: project.name, description: project.description };
 }
 
 export default async function ProjectPage({
@@ -70,12 +70,15 @@ export default async function ProjectPage({
             </div>
           </div>
 
-          <div className="relative w-full pt-[52.5%]">
+          <div
+            className="relative flex aspect-16/10 w-full items-center justify-center overflow-hidden rounded-xl"
+            style={{ backgroundColor: project.bgColor }}
+          >
             <Image
-              fill
-              src={project.coverImage}
+              src={project.image}
               alt={project.name}
-              className="rounded-xl border dark:border-zinc-800 border-zinc-100 object-cover"
+              placeholder="blur"
+              className="h-[72%] w-auto object-contain drop-shadow-lg"
               quality={100}
             />
           </div>

@@ -1,72 +1,112 @@
 import type { Project } from "@/types";
+import wildOasisWebsite from "@/assets/projects/wild-oasis-customer-website.png";
+import bonmano from "@/assets/projects/bonmano-coffee.png";
+import wildOasisDashboard from "@/assets/projects/wild-oasis-dashboard.png";
+import pizza from "@/assets/projects/react-pizza.png";
+import natours from "@/assets/projects/natours.png";
+import pacman from "@/assets/projects/pac-man.png";
+import forkify from "@/assets/projects/forkify.png";
+import privateSite from "@/assets/projects/personal-website.png";
+import camping from "@/assets/projects/camping-web.png";
 
 export const projects: Project[] = [
   {
-    slug: "lumen",
-    name: "Lumen",
-    tagline: "A tiny, fast static-site generator for technical writers.",
+    slug: "the-wild-oasis-website",
+    name: "The Wild Oasis Website",
     description:
-      "Lumen is a Markdown-first SSG focused on long-form technical content. It ships with syntax highlighting, citations, and a built-in reading-time estimate. Built with Rust and a thin TypeScript wrapper.",
-    coverImage: "https://picsum.photos/seed/lumen/1200/700",
-    logo: "✨",
-    liveUrl: "https://example.com",
-    repoUrl: "https://github.com/",
-    tags: ["Rust", "TypeScript", "CLI"],
+      "Hotel booking platform where guests can browse accommodations, manage reservations, and access their accounts. Reservation updates are synchronized in real time with the hotel management system.",
+    image: wildOasisWebsite,
+    bgColor: "#0f766e",
+    liveUrl: "https://the-wild-oasis-website-tadayoni.vercel.app/",
+    repoUrl: "https://github.com/Ali-Tadayoni/the-wild-oasis-website",
+    tags: ["Next.js", "Supabase", "Tailwind"],
   },
   {
-    slug: "ferry",
-    name: "Ferry",
-    tagline: "Type-safe job queue for Node, with a tiny footprint.",
+    slug: "bonmano-coffee-shop",
+    name: "Bonmano Coffee Shop",
     description:
-      "Ferry is a Postgres-backed job queue that exposes a single typed API for producing and consuming jobs. No Redis, no extra infra — just your database.",
-    coverImage: "https://picsum.photos/seed/ferry/1200/700",
-    logo: "⛴️",
-    liveUrl: "https://example.com",
-    repoUrl: "https://github.com/",
-    tags: ["Node", "Postgres", "TypeScript"],
+      "Responsive landing page featuring dark mode and interactive sections that create an engaging user experience.",
+    image: bonmano,
+    bgColor: "#6b4423",
+    liveUrl: "https://bonmano.netlify.app/",
+    repoUrl: "https://github.com/Ali-Tadayoni/Coffee-Shop",
+    tags: ["HTML", "CSS", "JavaScript"],
   },
   {
-    slug: "atlas",
-    name: "Atlas",
-    tagline: "A keyboard-first browser for engineers.",
+    slug: "the-wild-oasis-admin-dashboard",
+    name: "The Wild Oasis Admin Dashboard",
     description:
-      "Atlas is a browser built around command palettes and link previews. It's a personal project — half experiment, half daily driver.",
-    coverImage: "https://picsum.photos/seed/atlas/1200/700",
-    logo: "🗺️",
-    liveUrl: "https://example.com",
-    tags: ["Electron", "React"],
+      "Hotel management platform featuring reservation management, analytics dashboards, filtering, pagination, role-based workflows, and dark mode support.",
+    image: wildOasisDashboard,
+    bgColor: "#1e3a8a",
+    liveUrl: "https://wild-oasis-hotel-site.netlify.app",
+    repoUrl: "https://github.com/Ali-Tadayoni/The-Wild-Oasis",
+    tags: ["React", "Supabase", "Styled Components"],
   },
   {
-    slug: "chime",
-    name: "Chime",
-    tagline: "Healthier notifications for focused work.",
+    slug: "pizza-app",
+    name: "Pizza App",
     description:
-      "Chime batches and summarizes notifications across your apps, delivering them in scheduled windows. Built with Tauri and Rust.",
-    coverImage: "https://picsum.photos/seed/chime/1200/700",
-    logo: "🔔",
-    repoUrl: "https://github.com/",
-    tags: ["Tauri", "Rust"],
+      "Online restaurant application featuring menu browsing, cart management, order tracking, and geolocation support within a responsive user experience.",
+    image: pizza,
+    bgColor: "#b91c1c",
+    liveUrl: "https://react-pizza-demo-app.netlify.app/",
+    repoUrl: "https://github.com/Ali-Tadayoni/pizza-app",
+    tags: ["React", "Redux", "Tailwind"],
   },
   {
-    slug: "harbor",
-    name: "Harbor",
-    tagline: "Self-hosted analytics for indie makers.",
+    slug: "natours",
+    name: "Natours",
     description:
-      "A privacy-friendly analytics service you can deploy in a single binary. Designed for personal sites and small product launches.",
-    coverImage: "https://picsum.photos/seed/harbor/1200/700",
-    logo: "⚓",
-    liveUrl: "https://example.com",
-    tags: ["Go", "SQLite"],
+      "Nature tours landing page featuring a responsive layout, smooth modern animations, and a modern visual design focused on user experience.",
+    image: natours,
+    bgColor: "#15803d",
+    liveUrl: "https://tadayoni-natours.netlify.app/",
+    repoUrl: "https://github.com/Ali-Tadayoni/Natours",
+    tags: ["HTML", "SCSS"],
   },
   {
-    slug: "prism",
-    name: "Prism",
-    tagline: "A design system for data-dense interfaces.",
+    slug: "pacman-game",
+    name: "Pacman Game",
     description:
-      "Prism is a React component library tuned for dashboards: dense tables, virtualized lists, and well-considered keyboard handling.",
-    coverImage: "https://picsum.photos/seed/prism/1200/700",
-    logo: "🔷",
-    repoUrl: "https://github.com/",
-    tags: ["React", "Design Systems"],
+      "Browser-based recreation of the classic arcade game built as a personal challenge, focusing on gameplay logic and interactive experience.",
+    image: pacman,
+    bgColor: "#1e1b4b",
+    liveUrl: "https://pacman-ali-tadayoni.netlify.app/",
+    repoUrl: "https://github.com/Ali-Tadayoni/PacMan",
+    tags: ["JavaScript", "HTML", "CSS"],
+  },
+  {
+    slug: "forkify",
+    name: "Forkify",
+    description:
+      "Recipe discovery application built using MVC architecture, featuring recipe search, bookmarking, and adjustable serving sizes for a streamlined cooking experience.",
+    image: forkify,
+    bgColor: "#c2410c",
+    liveUrl: "https://forkify-smoky.vercel.app/",
+    repoUrl: "https://github.com/Ali-Tadayoni/forkify",
+    tags: ["JavaScript", "HTML", "CSS"],
+  },
+  {
+    slug: "private-site",
+    name: "Private Site",
+    description:
+      "Personal website featuring a fully responsive layout, dark mode support, and interactive components for an engaging browsing experience.",
+    image: privateSite,
+    bgColor: "#4338ca",
+    liveUrl: "https://private-site-demo.netlify.app/",
+    repoUrl: "https://github.com/Ali-Tadayoni/Private-Site",
+    tags: ["HTML", "CSS", "JavaScript", "Swiper"],
+  },
+  {
+    slug: "camping-web",
+    name: "Camping Web",
+    description:
+      "Responsive landing page designed for a smooth cross-device experience with a clean and minimal layout.",
+    image: camping,
+    bgColor: "#047857",
+    liveUrl: "https://camping-web-company.netlify.app/",
+    repoUrl: "https://github.com/Ali-Tadayoni/Camping-Web",
+    tags: ["HTML", "CSS"],
   },
 ];
