@@ -21,7 +21,19 @@
       "Bash(lsof -ti:3000 -ti:3001 -ti:3002)",
       "Bash(git checkout *)",
       "Bash(npx tsc *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git restore *)",
+      "Bash(git commit -m 'feat: rebuild work experience section as scroll-driven timeline *)",
+      "Bash(mv \"Material UI.svg\" material-ui.svg)",
+      "Bash(mv \"Next.js.svg\" nextjs.svg)",
+      "Bash(mv \"Node.js.svg\" nodejs.svg)",
+      "Bash(mv \"Nuxt JS.svg\" nuxt.svg)",
+      "Bash(mv \"Stack Overflow.svg\" stack-overflow.svg)",
+      "mcp__playwright__browser_console_messages",
+      "Bash(kill %1)"
+    ],
+    "additionalDirectories": [
+      "/Users/ali/Desktop/alitadayoni.com/Brand-Aasets"
     ]
   }
 }
