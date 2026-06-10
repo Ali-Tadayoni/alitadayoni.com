@@ -109,3 +109,100 @@ h1, h2, h3, h4 {
     animation: none !important;
   }
 }
+
+/* Spotlight Button — mouse-tracked radial highlight */
+.spotlight-btn {
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  --spot-opacity: 0;
+}
+.spotlight-btn::before {
+  content: "";
+  position: absolute;
+  left: var(--mouse-x);
+  top: var(--mouse-y);
+  width: 220px;
+  height: 220px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: var(--spot-opacity);
+  transition: opacity 0.25s ease;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0.2) 40%,
+    rgba(255, 255, 255, 0) 70%
+  );
+}
+
+/* Tools marquee */
+.marquee {
+  display: flex;
+  width: max-content;
+  gap: 1rem;
+  animation: marquee-scroll var(--marquee-duration, 40s) linear infinite;
+}
+.marquee--reverse {
+  animation-direction: reverse;
+}
+.marquee-wrap:hover .marquee {
+  animation-play-state: paused;
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-25%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee { animation: none !important; }
+}
+
+/* Spotlight Card — Tech Stack.
+   Driven by --x / --y set on :root from a global pointermove listener, so the
+   spotlight tracks the cursor across the page (not just on hover). Each card
+   sets its own --hue. background-attachment: fixed keeps the gradient anchored
+   to the viewport, so the spot follows the cursor across cards. */
+.spot-card {
+  --hue: 150;
+  --sat: 90%;
+  --light: 65%;
+  --size: 320px;
+  position: relative;
+  isolation: isolate;
+}
+.spot-card::before,
+.spot-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background-attachment: fixed;
+}
+/* Border highlight — crisp, bright ring */
+.spot-card::before {
+  padding: 1.5px;
+  background-image: radial-gradient(
+    var(--size) circle at var(--x, 50vw) var(--y, 50vh),
+    hsl(var(--hue) var(--sat) var(--light) / 1),
+    hsl(var(--hue) var(--sat) var(--light) / 0.55) 25%,
+    transparent 45%
+  );
+  filter: brightness(1.15);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  z-index: 1;
+}
+/* Inner glow — subtle, soft fill */
+.spot-card::after {
+  background-image: radial-gradient(
+    calc(var(--size) * 0.85) circle at var(--x, 50vw) var(--y, 50vh),
+    hsl(var(--hue) var(--sat) var(--light) / 0.08),
+    transparent 50%
+  );
+  z-index: 0;
+}
+:root.light .spot-card {
+  --light: 55%;
+}

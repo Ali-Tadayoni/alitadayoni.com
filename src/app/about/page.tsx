@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Slide } from "@/components/shared/Slide";
 import { Bio } from "@/components/about/Bio";
-import { Usage } from "@/components/about/Usage";
+import { Tools } from "@/components/about/Tools";
+import { TechStack } from "@/components/about/TechStack";
 import { Heroes } from "@/components/about/Heroes";
 
 export const metadata: Metadata = {
@@ -11,11 +12,12 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="relative lg:max-w-7xl mx-auto max-w-3xl md:px-16 px-6">
+    <main className="relative mx-auto max-w-3xl px-6 md:px-16 lg:max-w-7xl">
       <Bio />
       <Slide delay={0.14}>
-        <Usage />
+        <Tools />
       </Slide>
+      <TechStack />
       <Heroes />
     </main>
   );

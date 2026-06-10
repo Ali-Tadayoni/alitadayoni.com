@@ -11,10 +11,10 @@ export const profile: Profile = {
     "Lately I've been spending most of my time on developer infrastructure and platform tooling — the kind of work that's invisible when it goes right and very visible when it doesn't.",
     "Outside of work, you'll find me reading, climbing badly, and slowly losing my battle against an ever-growing list of side projects.",
   ],
-  email: "hello@alitadayoni.com",
+  email: "tadayoni.ali.enayat@gmail.com",
   resumeUrl: "/resume.pdf",
   location: "Toronto, Canada",
-  avatarUrl: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=600&h=600&fit=crop",
+  avatarUrl: "/ali-tadayoni.jpeg",
   socials: [
     { name: "GitHub", url: "https://github.com/Ali-Tadayoni", icon: "github" },
     { name: "LinkedIn", url: "https://www.linkedin.com/in/ali-tadayoni", icon: "linkedin" },

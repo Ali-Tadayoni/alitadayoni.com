@@ -1,19 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Download, ExternalLink, Mail } from "lucide-react";
+import { Download, Mail } from "lucide-react";
 import { Slide } from "@/components/shared/Slide";
+import { SpotlightLinkButton } from "@/components/shared/SpotlightButton";
 import { profile } from "@/data/profile";
 
 export function Bio() {
   return (
-    <section className="relative grid lg:grid-cols-[1.2fr_1fr] grid-cols-1 gap-x-6 justify-items-center">
+    <section className="relative grid grid-cols-1 justify-items-center gap-x-6 lg:grid-cols-[1.2fr_1fr]">
       <div className="order-2 lg:order-none">
         <Slide>
-          <h1 className="font-incognito font-semibold tracking-tight sm:text-5xl text-3xl lg:leading-tight basis-1/2 mb-8">
-            I&apos;m {profile.name}. I live in {profile.location}, where I build things for the web.
+          <h1 className="font-incognito mb-8 basis-1/2 text-3xl font-semibold tracking-tight sm:text-5xl lg:leading-tight">
+            👋 Hey! I&apos;m {profile.name}.
           </h1>
 
-          <div className="dark:text-zinc-400 text-zinc-600 leading-relaxed space-y-4">
+          <div className="space-y-4 leading-relaxed text-zinc-600 dark:text-zinc-400">
             {profile.longBio.map((p, i) => (
               <p key={i}>{p}</p>
             ))}
@@ -21,11 +22,11 @@ export function Bio() {
         </Slide>
       </div>
 
-      <aside className="flex flex-col lg:justify-self-center justify-self-start gap-y-8 lg:order-1 order-none mb-12">
+      <aside className="order-none mb-12 flex flex-col gap-y-8 justify-self-start lg:order-1 lg:justify-self-center">
         <Slide delay={0.1}>
           <div className="sticky top-10">
             <Image
-              className="rounded-2xl mb-4 object-cover max-h-96 min-h-96 bg-top"
+              className="mb-6 max-h-96 min-h-96 rounded-2xl bg-top object-cover"
               src={profile.avatarUrl}
               width={400}
               height={400}
@@ -34,32 +35,32 @@ export function Bio() {
               priority
             />
 
-            <div className="flex flex-col text-center gap-y-4">
-              <div className="flex items-center gap-x-3">
+            <div className="flex flex-col gap-y-4">
+              <SpotlightLinkButton
+                href={profile.resumeUrl}
+                download
+                className="w-full"
+              >
+                Download Resume
+                <Download className="h-4 w-4" />
+              </SpotlightLinkButton>
+
+              <div className="flex flex-col gap-3 text-sm sm:flex-row sm:items-center sm:justify-between">
+                <span className="inline-flex items-center gap-x-2.5 text-zinc-700 dark:text-zinc-300">
+                  <span className="relative inline-flex h-3 w-3">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary-color opacity-75" />
+                    <span className="relative inline-flex h-3 w-3 rounded-full bg-primary-color" />
+                  </span>
+                  Open for hire
+                </span>
                 <Link
-                  href={profile.resumeUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-center text-center gap-x-2 basis-[90%] dark:bg-primary-bg bg-zinc-100 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 rounded-md py-2 text-lg font-incognito font-semibold"
+                  href={`mailto:${profile.email}`}
+                  className="inline-flex items-center gap-x-2 truncate text-zinc-600 hover:text-primary-color dark:text-zinc-400"
                 >
-                  View Résumé <ExternalLink className="text-base h-4 w-4" />
-                </Link>
-                <Link
-                  href={profile.resumeUrl}
-                  download
-                  className="flex items-center justify-center text-center dark:text-primary-color text-secondary-color hover:underline basis-[10%] dark:bg-primary-bg bg-zinc-100 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 rounded-md py-3 text-lg"
-                >
-                  <Download className="h-5 w-5" />
+                  <Mail className="h-4 w-4 shrink-0" />
+                  {profile.email}
                 </Link>
               </div>
-
-              <Link
-                href={`mailto:${profile.email}`}
-                className="flex items-center gap-x-2 hover:text-primary-color justify-center"
-              >
-                <Mail className="text-lg h-5 w-5" />
-                {profile.email}
-              </Link>
             </div>
           </div>
         </Slide>

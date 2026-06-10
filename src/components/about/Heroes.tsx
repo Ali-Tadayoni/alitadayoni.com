@@ -1,48 +1,39 @@
 import Link from "next/link";
-import { Check } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Slide } from "@/components/shared/Slide";
+import { SectionHeading } from "@/components/shared/SectionHeading";
 import { heroes } from "@/data/heroes";
 
 export function Heroes() {
   return (
-    <section className="mt-32 max-w-5xl">
-      <Slide delay={0.17}>
-        <h2 className="text-4xl mb-4 font-bold tracking-tight">Heroes</h2>
-        <p className="dark:text-zinc-400 text-zinc-600 max-w-2xl">
-          A small list of people whose work has shaped how I think about engineering, design, and
-          the web. <strong className="font-semibold">&ldquo;In no particular order&rdquo;</strong>
-        </p>
-      </Slide>
+    <section className="mt-32 mb-24">
+      <SectionHeading
+        title="Heroes"
+        description="People whose work has shaped how I think about engineering and the web."
+      />
 
-      <ul className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 mt-12 tracking-tight">
-        {heroes.map((hero) => (
-          <li
-            key={hero.name}
-            className="flex items-center gap-x-2 dark:bg-primary-bg bg-zinc-100 border dark:border-zinc-800 border-zinc-200 rounded-md px-2 py-1"
-          >
-            {hero.met ? (
-              <span
-                title="Met in person"
-                className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary-color/20 text-primary-color"
+      <Slide delay={0.1}>
+        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {heroes.map((hero) => (
+            <li key={hero.name}>
+              <Link
+                href={hero.url}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center justify-between gap-x-4 rounded-xl border border-zinc-200 bg-secondary-bg p-5 backdrop-blur-sm transition-colors hover:border-primary-color/50 dark:border-zinc-800 dark:bg-primary-bg"
               >
-                <Check className="h-3 w-3" />
-              </span>
-            ) : (
-              <span className="inline-flex h-5 w-5 items-center justify-center text-zinc-400">·</span>
-            )}
-            <Link
-              href={hero.url}
-              target="_blank"
-              rel="noreferrer"
-              className={`font-incognito tracking-wide hover:underline ${
-                hero.met ? "dark:text-green-300 text-green-800" : ""
-              }`}
-            >
-              {hero.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
+                <div className="min-w-0">
+                  <p className="font-incognito text-lg font-semibold tracking-tight text-zinc-900 group-hover:text-primary-color dark:text-zinc-50">
+                    {hero.name}
+                  </p>
+                  <p className="truncate text-sm text-zinc-600 dark:text-zinc-400">{hero.role}</p>
+                </div>
+                <ArrowUpRight className="h-5 w-5 shrink-0 text-zinc-400 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary-color" />
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </Slide>
     </section>
   );
 }

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { experience } from "@/data/experience";
 import type { Job } from "@/types";
+import { SectionHeading } from "@/components/shared/SectionHeading";
 
 const gradientText =
   "bg-gradient-to-r from-primary-color to-tertiary-color bg-clip-text text-transparent";
@@ -9,16 +10,7 @@ const gradientText =
 export function Experience() {
   return (
     <section className="mt-32">
-      <div className="mb-12 flex flex-col items-center text-center md:mb-16">
-        <p className="text-xs font-medium uppercase tracking-[0.25em] text-zinc-500 dark:text-zinc-400">
-          What I have done so far
-        </p>
-        <h2
-          className={`font-incognito mt-3 text-4xl font-bold tracking-tight md:text-5xl ${gradientText}`}
-        >
-          Work Experience.
-        </h2>
-      </div>
+      <SectionHeading eyebrow="What I have done so far" title="Work Experience." />
 
       <div className="relative mx-auto grid max-w-5xl grid-cols-[2.5rem_1fr] gap-x-6 gap-y-12 md:grid-cols-[1fr_3rem_1fr] md:gap-x-4 md:gap-y-16">
         <div

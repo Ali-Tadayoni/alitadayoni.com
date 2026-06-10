@@ -1,10 +1,34 @@
+import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
+import { brandIcons } from "@/assets/brands";
 import { profile } from "@/data/profile";
 
-const builtWith = [
-  { name: "Next.js", url: "https://nextjs.org" },
-  { name: "Tailwind CSS", url: "https://tailwindcss.com" },
-  { name: "Vercel", url: "https://vercel.com" },
+type BuiltWith = {
+  name: string;
+  url: string;
+  lightIcon: StaticImageData;
+  darkIcon: StaticImageData;
+};
+
+const builtWith: BuiltWith[] = [
+  {
+    name: "Next.js",
+    url: "https://nextjs.org",
+    lightIcon: brandIcons["nextjs-light"],
+    darkIcon: brandIcons["nextjs-dark"],
+  },
+  {
+    name: "Tailwind CSS",
+    url: "https://tailwindcss.com",
+    lightIcon: brandIcons.tailwind,
+    darkIcon: brandIcons.tailwind,
+  },
+  {
+    name: "Vercel",
+    url: "https://vercel.com",
+    lightIcon: brandIcons["vercel-light"],
+    darkIcon: brandIcons["vercel-dark"],
+  },
 ];
 
 export function Footer() {
@@ -22,6 +46,21 @@ export function Footer() {
                   rel="noreferrer"
                   className="flex items-center gap-x-2 dark:text-white text-zinc-600 hover:underline"
                 >
+                  <Image
+                    src={tool.lightIcon}
+                    alt={tool.name}
+                    width={16}
+                    height={16}
+                    className="h-4 w-4 object-contain dark:hidden"
+                  />
+                  <Image
+                    src={tool.darkIcon}
+                    alt=""
+                    aria-hidden
+                    width={16}
+                    height={16}
+                    className="hidden h-4 w-4 object-contain dark:block"
+                  />
                   {tool.name}
                 </Link>
               </li>
