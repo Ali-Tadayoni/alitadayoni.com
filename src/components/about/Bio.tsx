@@ -36,20 +36,16 @@ export function Bio() {
             />
 
             <div className="flex flex-col gap-y-4">
-              <SpotlightLinkButton
-                href={profile.resumeUrl}
-                download
-                className="w-full"
-              >
+              <SpotlightLinkButton href={profile.resumeUrl} download className="w-full">
                 Download Resume
                 <Download className="h-4 w-4" />
               </SpotlightLinkButton>
 
               <div className="flex flex-col gap-3 text-sm sm:flex-row sm:items-center sm:justify-between">
                 <span className="inline-flex items-center gap-x-2.5 text-zinc-700 dark:text-zinc-300">
-                  <span className="relative inline-flex h-3 w-3">
+                  <span className="relative inline-flex h-4 w-4 items-center justify-center">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary-color opacity-75" />
-                    <span className="relative inline-flex h-3 w-3 rounded-full bg-primary-color" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-primary-color" />
                   </span>
                   Open for hire
                 </span>
