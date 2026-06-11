@@ -82,14 +82,34 @@ function ExperienceCard({ job }: { job: Job }) {
         {job.role}
       </h3>
 
-      <Link
-        href={job.url ?? "#"}
-        target="_blank"
-        rel="noreferrer"
-        className="mt-2 inline-block text-sm text-zinc-600 transition-colors hover:text-primary-color dark:text-zinc-400 dark:hover:text-primary-color"
-      >
-        {job.company}
-      </Link>
+      {job.companyLabel ? (
+        <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+          {job.companyLabel.map((seg, i) =>
+            seg.url ? (
+              <Link
+                key={i}
+                href={seg.url}
+                target="_blank"
+                rel="noreferrer"
+                className="underline underline-offset-2 transition-colors hover:text-primary-color dark:hover:text-primary-color"
+              >
+                {seg.text}
+              </Link>
+            ) : (
+              <span key={i}>{seg.text}</span>
+            )
+          )}
+        </p>
+      ) : (
+        <Link
+          href={job.url ?? "#"}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-2 inline-block text-sm text-zinc-600 transition-colors hover:text-primary-color dark:text-zinc-400 dark:hover:text-primary-color"
+        >
+          {job.company}
+        </Link>
+      )}
 
       <ul className="mt-5 space-y-3 text-sm text-zinc-700 dark:text-zinc-300">
         {job.bullets.map((bullet) => (

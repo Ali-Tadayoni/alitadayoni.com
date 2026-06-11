@@ -18,8 +18,14 @@ export type Profile = {
   socials: Social[];
 };
 
+export type CompanyLabelSegment = {
+  text: string;
+  url?: string;
+};
+
 export type Job = {
   company: string;
+  companyLabel?: CompanyLabelSegment[];
   role: string;
   url?: string;
   logo: string;
