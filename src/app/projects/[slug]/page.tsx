@@ -78,8 +78,9 @@ export default async function ProjectPage({
               src={project.image}
               alt={project.name}
               placeholder="blur"
+              sizes="(min-width: 768px) 768px, 100vw"
               className="h-[72%] w-auto object-contain drop-shadow-lg"
-              quality={100}
+              priority
             />
           </div>
 

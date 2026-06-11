@@ -28,9 +28,9 @@ export function Bio() {
             <Image
               className="mb-6 max-h-96 min-h-96 rounded-2xl bg-top object-cover"
               src={profile.avatarUrl}
-              width={400}
-              height={400}
-              quality={100}
+              width={384}
+              height={384}
+              sizes="384px"
               alt={profile.name}
               priority
             />

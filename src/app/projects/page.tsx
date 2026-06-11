@@ -21,8 +21,8 @@ export default function ProjectsPage() {
 
       <Slide delay={0.1}>
         <section className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mb-12">
-          {projects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
+          {projects.map((project, i) => (
+            <ProjectCard key={project.slug} project={project} priority={i === 0} />
           ))}
         </section>
 

@@ -20,8 +20,8 @@ export function Projects() {
       <SectionHeading eyebrow="What I build in my free time" title="Projects." />
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {featured.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
+        {featured.map((project, i) => (
+          <ProjectCard key={project.slug} project={project} priority={i === 0} />
         ))}
       </div>
 

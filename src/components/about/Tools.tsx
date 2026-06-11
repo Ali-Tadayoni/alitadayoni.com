@@ -6,12 +6,17 @@ import { tools, type Tool } from "@/data/tools";
 
 // Deterministic shuffles so SSR matches client. Each row uses all tools in a
 // different order, so the two rows never line up on the same icon at once.
-const ROW_A_ORDER = [0, 5, 2, 9, 7, 3, 11, 1, 8, 4, 10, 6];
-const ROW_B_ORDER = [6, 1, 10, 4, 8, 11, 3, 7, 9, 2, 5, 0];
+function shuffle(length: number, step: number) {
+  const out: number[] = [];
+  for (let i = 0; i < length; i++) out.push((i * step) % length);
+  return out;
+}
 
 export function Tools() {
-  const rowA = ROW_A_ORDER.map((i) => tools[i]);
-  const rowB = ROW_B_ORDER.map((i) => tools[i]);
+  const n = tools.length;
+  // step coprime with n keeps the sequence a permutation covering every index
+  const rowA = shuffle(n, 5).map((i) => tools[i]);
+  const rowB = shuffle(n, 7).map((i) => tools[i]);
 
   return (
     <section className="mt-32">
