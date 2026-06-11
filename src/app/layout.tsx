@@ -32,7 +32,14 @@ export const metadata: Metadata = {
     description: profile.bio,
     url: profile.siteUrl,
     siteName: profile.name,
+    locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: profile.name,
+    description: profile.bio,
+    creator: "@Tadayoni_Ali",
   },
 };
 
