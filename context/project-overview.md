@@ -1,6 +1,6 @@
 # Project Overview
 
-A personal portfolio website for **alitadayoni.com**, structurally inspired by [victoreke.com](https://victoreke.com).
+A personal portfolio website for **alitadayoni.com**.
 
 ## Stack
 
@@ -45,18 +45,6 @@ src/
 
 Primary accent: `#33E092` (green). Dark-mode-first with a light-mode toggle. Fonts: **Inter** (body) and **DM Sans** (display).
 
-## Excluded (by design)
-
-- No CMS (Sanity, Contentful, etc.)
-- No `react-icons` (use `lucide-react`)
-- No GitHub contribution calendar
-- No Buy Me a Coffee / Giscus / donation widgets
-- No blog system — `/blog` shows a static empty state only
-
-## Personalization Checklist
-
-See [docs/PERSONALIZATION.md](../docs/PERSONALIZATION.md) for the full list of files to edit.
-
 ## Scripts
 
 ```bash
@@ -64,6 +52,7 @@ npm install
 npm run dev      # http://localhost:3000
 npm run build
 npm start
+npm run lint
 ```
 
 ## Environment
