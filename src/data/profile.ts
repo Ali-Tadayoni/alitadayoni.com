@@ -3,6 +3,7 @@ import type { Profile } from "@/types";
 export const profile: Profile = {
   name: "Ali Tadayoni",
   shortName: "Ali",
+  siteUrl: "https://alitadayoni.com",
   role: "Frontend Engineer",
   headline: "Frontend Engineer",
   bio: "I'm Ali Tadayoni, Frontend Engineer with 2+ years of experience building SaaS, cloud infrastructure, and customer-facing platforms used by 200k+ users. Experienced in React, Next.js, TypeScript, frontend architecture, Vue.js-to-React migrations, performance optimization, and production-grade testing across high-impact user workflows. An energetic, collaborative engineer thriving in cross-functional teams, combining attention to detail with a proactive commitment to continuous technical growth and skill development.",
@@ -16,7 +17,7 @@ export const profile: Profile = {
     "Looking ahead, my goal is to continue expanding my expertise and grow into a well-rounded full-stack software engineer. I'm always eager to learn, take on new challenges, and keep building better products.",
   ],
   email: "tadayoni.ali.enayat@gmail.com",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "https://raw.githubusercontent.com/Ali-Tadayoni/Resume/main/Ali%20Tadayoni%20Resume%202026.pdf",
   location: "Toronto, Canada",
   avatarUrl: "/ali-tadayoni.jpeg",
   socials: [

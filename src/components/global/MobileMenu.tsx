@@ -2,14 +2,13 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, User, FolderGit2, FileText, Image as ImageIcon } from "lucide-react";
+import { Menu, X, User, FolderGit2, FileText } from "lucide-react";
 import { profile } from "@/data/profile";
 
 const ICONS = {
   "/about": User,
   "/projects": FolderGit2,
   "/blog": FileText,
-  "/photos": ImageIcon,
 } as const;
 
 import { navLinks } from "@/data/nav";

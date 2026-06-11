@@ -21,7 +21,7 @@ const display = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://alitadayoni.com"),
+  metadataBase: new URL(profile.siteUrl),
   title: {
     default: `${profile.name} — ${profile.role}`,
     template: `%s — ${profile.name}`,
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: profile.name,
     description: profile.bio,
-    url: "https://alitadayoni.com",
+    url: profile.siteUrl,
     siteName: profile.name,
     type: "website",
   },

@@ -7,6 +7,7 @@ export type Social = {
 export type Profile = {
   name: string;
   shortName: string;
+  siteUrl: string;
   role: string;
   headline: string;
   bio: string;
@@ -55,9 +56,7 @@ export type Skill = {
 
 export type Hero = {
   name: string;
-  role: string;
   url: string;
-  met: boolean;
 };
 
 export type NavLink = {

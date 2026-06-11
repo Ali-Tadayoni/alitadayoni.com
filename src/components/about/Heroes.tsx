@@ -26,7 +26,6 @@ export function Heroes() {
                   <p className="font-incognito text-lg font-semibold tracking-tight text-zinc-900 group-hover:text-primary-color dark:text-zinc-50">
                     {hero.name}
                   </p>
-                  <p className="truncate text-sm text-zinc-600 dark:text-zinc-400">{hero.role}</p>
                 </div>
                 <ArrowUpRight className="h-5 w-5 shrink-0 text-zinc-400 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary-color" />
               </Link>

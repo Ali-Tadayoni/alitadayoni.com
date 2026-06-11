@@ -2,21 +2,31 @@ import type { Hero } from "@/types";
 
 export const heroes: Hero[] = [
   {
-    name: "Brad Traversy",
-    role: "Educator, Traversy Media",
-    url: "https://github.com/bradtraversy",
-    met: false,
+    name: "Andrei Neagoie",
+    url: "https://github.com/aneagoie",
   },
   {
     name: "Jonas Schmedtmann",
-    role: "Educator & web designer",
     url: "https://github.com/jonasschmedtmann",
-    met: false,
+  },
+  {
+    name: "Brad Traversy",
+    url: "https://github.com/bradtraversy",
+  },
+  {
+    name: "Kyle Simpson",
+    url: "https://github.com/getify",
+  },
+  {
+    name: "Mohammadreza Namjoo",
+    url: "https://github.com/mohammadrezanamjoo",
+  },
+  {
+    name: "Jhey Tompkins",
+    url: "https://github.com/jh3y",
   },
   {
     name: "Dan Abramov",
-    role: "React core, educator",
     url: "https://github.com/gaearon",
-    met: false,
   },
 ];
