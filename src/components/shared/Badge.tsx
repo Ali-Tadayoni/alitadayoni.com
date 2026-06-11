@@ -2,18 +2,18 @@ type TechStyle = { bg: string; fg: string };
 
 const TECH_COLORS: Record<string, TechStyle> = {
   javascript: { bg: "#f7df1e", fg: "#1a1a1a" },
-  typescript: { bg: "#3178c6", fg: "#ffffff" },
-  html: { bg: "#e34c26", fg: "#ffffff" },
-  css: { bg: "#1572b6", fg: "#ffffff" },
-  scss: { bg: "#cc6699", fg: "#ffffff" },
+  typescript: { bg: "#2a5b9c", fg: "#ffffff" },
+  html: { bg: "#b8391b", fg: "#ffffff" },
+  css: { bg: "#0f5a91", fg: "#ffffff" },
+  scss: { bg: "#a04d77", fg: "#ffffff" },
   react: { bg: "#61dafb", fg: "#0a1929" },
   "next.js": { bg: "#0a0a0a", fg: "#ffffff" },
   tailwind: { bg: "#38bdf8", fg: "#0a1929" },
   supabase: { bg: "#3ecf8e", fg: "#0a1f15" },
-  redux: { bg: "#764abc", fg: "#ffffff" },
-  "styled components": { bg: "#db7093", fg: "#ffffff" },
-  swiper: { bg: "#0080ff", fg: "#ffffff" },
-  node: { bg: "#3c873a", fg: "#ffffff" },
+  redux: { bg: "#5e3a96", fg: "#ffffff" },
+  "styled components": { bg: "#b25775", fg: "#ffffff" },
+  swiper: { bg: "#0066cc", fg: "#ffffff" },
+  node: { bg: "#2f6b2d", fg: "#ffffff" },
   rust: { bg: "#dea584", fg: "#1a1a1a" },
 };
 

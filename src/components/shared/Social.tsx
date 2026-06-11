@@ -4,7 +4,7 @@ import { SocialIcon } from "@/components/global/SocialIcon";
 
 export function Social() {
   return (
-    <ul className="flex items-center flex-wrap gap-x-5 gap-y-4 my-10">
+    <ul className="flex items-center justify-center xl:justify-start flex-wrap gap-x-5 gap-y-4 my-10">
       {profile.socials.map((s) => (
         <li key={s.name}>
           <Link

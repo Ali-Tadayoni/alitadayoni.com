@@ -16,7 +16,7 @@ export default function ProjectsPage() {
     <main className="max-w-7xl mx-auto md:px-16 px-6">
       <PageHeading
         title="Projects"
-        description="A collection of products, tools, and experiments — some shipped, some still cooking."
+        description="Things I've built in my free time — to learn, experiment, and explore."
       />
 
       <Slide delay={0.1}>

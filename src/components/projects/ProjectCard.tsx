@@ -37,9 +37,9 @@ export function ProjectCard({ project }: { project: Project }) {
           rel="noreferrer"
           className="group/title w-fit"
         >
-          <h3 className="font-incognito text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-50 group-hover/title:underline underline-offset-4">
+          <h2 className="font-incognito text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-50 group-hover/title:underline underline-offset-4">
             {project.name}
-          </h3>
+          </h2>
         </Link>
 
         <div className="flex flex-wrap gap-1.5">

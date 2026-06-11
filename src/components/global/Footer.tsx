@@ -69,7 +69,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col lg:items-end items-center lg:text-start text-center">
-          <small className="text-zinc-500">
+          <small className="text-zinc-600 dark:text-zinc-400">
             Copyright © {profile.name} {new Date().getFullYear()} All rights Reserved
           </small>
         </div>

@@ -20,13 +20,14 @@ export function Slide({
 
   return (
     <div
+      className={className}
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(10px)",
         transition: "opacity 300ms ease-in-out, transform 300ms ease-in-out",
       }}
     >
-      <div className={className}>{children}</div>
+      {children}
     </div>
   );
 }

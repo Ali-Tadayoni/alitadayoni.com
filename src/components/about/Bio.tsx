@@ -22,7 +22,7 @@ export function Bio() {
         </Slide>
       </div>
 
-      <aside className="order-none mb-12 flex flex-col gap-y-8 justify-self-start lg:order-1 lg:sticky lg:top-10 lg:self-start lg:justify-self-center">
+      <div className="order-none mb-12 flex flex-col gap-y-8 justify-self-center lg:order-1 lg:sticky lg:top-10 lg:self-start">
         <Slide delay={0.1}>
           <div>
             <Image
@@ -47,7 +47,7 @@ export function Bio() {
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary-color opacity-75" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-primary-color" />
                   </span>
-                  Open for hire
+                  Open to work{" "}
                 </span>
                 <Link
                   href={`mailto:${profile.email}`}
@@ -60,7 +60,7 @@ export function Bio() {
             </div>
           </div>
         </Slide>
-      </aside>
+      </div>
     </section>
   );
 }

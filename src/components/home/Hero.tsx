@@ -21,7 +21,7 @@ export function Hero() {
         </Slide>
       </div>
 
-      <Slide delay={0.14}>
+      <Slide delay={0.14} className="self-center xl:self-auto">
         <HeroIllustration />
       </Slide>
     </section>
