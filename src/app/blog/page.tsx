@@ -18,7 +18,7 @@ export default function BlogPage() {
       <Slide delay={0.1}>
         <EmptyState
           title="No posts yet"
-          message="There is no blog posts yet for that section"
+          message="There are no blog posts yet."
         />
       </Slide>
     </main>

@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import { Hero } from "@/components/home/Hero";
 import { Experience } from "@/components/home/Experience";
 import { Projects } from "@/components/home/Projects";
+import { profile } from "@/data/profile";
+
+export const metadata: Metadata = {
+  title: `${profile.name} — ${profile.role}`,
+  description: profile.bio,
+};
 
 export default function HomePage() {
   return (

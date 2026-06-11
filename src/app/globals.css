@@ -218,3 +218,9 @@ h1, h2, h3, h4 {
 :root.light .spot-card {
   --light: 55%;
 }
+/* iOS Safari ignores background-attachment: fixed, so disable the
+   spotlight on touch devices to avoid a glitched fallback */
+@media (hover: none) {
+  .spot-card::before,
+  .spot-card::after { display: none; }
+}
