@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import type { ComponentPropsWithoutRef, MouseEvent, ReactNode } from "react";
-import { useRef } from "react";
 
 type Variant = "primary" | "secondary";
 
@@ -50,10 +49,8 @@ export function SpotlightLinkButton({
   className = "",
   ...rest
 }: LinkProps) {
-  const ref = useRef<HTMLAnchorElement>(null);
   return (
     <Link
-      ref={ref}
       href={href}
       className={`${baseClass} ${variants[variant]} ${className}`}
       onMouseMove={handleMove}

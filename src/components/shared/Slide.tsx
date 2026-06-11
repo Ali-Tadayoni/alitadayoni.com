@@ -1,6 +1,4 @@
-"use client";
-
-import { useEffect, useState, type ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 export function Slide({
   children,
@@ -11,22 +9,9 @@ export function Slide({
   className?: string;
   delay?: number;
 }) {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const t = setTimeout(() => setVisible(true), delay * 1000);
-    return () => clearTimeout(t);
-  }, [delay]);
-
+  const style = { animationDelay: `${delay}s` } as CSSProperties;
   return (
-    <div
-      className={className}
-      style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(10px)",
-        transition: "opacity 300ms ease-in-out, transform 300ms ease-in-out",
-      }}
-    >
+    <div className={`slide-in ${className ?? ""}`} style={style}>
       {children}
     </div>
   );

@@ -1,5 +1,5 @@
 const gradientText =
-  "bg-gradient-to-r from-primary-color to-tertiary-color bg-clip-text text-transparent";
+  "bg-linear-to-r from-primary-color to-tertiary-color bg-clip-text text-transparent";
 
 type Props = {
   eyebrow?: string;

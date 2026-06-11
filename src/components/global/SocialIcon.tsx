@@ -11,5 +11,5 @@ const ICONS = {
 
 export function SocialIcon({ social, className }: { social: Social; className?: string }) {
   const Icon = ICONS[social.icon];
-  return <Icon className={className ?? "h-5 w-5"} aria-label={social.name} />;
+  return <Icon className={className ?? "h-5 w-5"} aria-hidden="true" />;
 }

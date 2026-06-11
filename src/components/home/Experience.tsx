@@ -5,7 +5,7 @@ import type { Job } from "@/types";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 
 const gradientText =
-  "bg-gradient-to-r from-primary-color to-tertiary-color bg-clip-text text-transparent";
+  "bg-linear-to-r from-primary-color to-tertiary-color bg-clip-text text-transparent";
 
 export function Experience() {
   return (
@@ -29,33 +29,45 @@ export function Experience() {
 
 function ExperienceRow({ job, index }: { job: Job; index: number }) {
   const isLeft = index % 2 === 0;
+  const markerClass =
+    "z-10 col-start-1 -mt-2 grid h-12 w-12 place-items-center justify-self-center rounded-full border-2 border-primary-color bg-white p-2 shadow-md transition-transform hover:scale-110 dark:bg-zinc-900 md:col-start-2";
+  const markerStyle = { gridRow: index + 1 };
+  const logo = (
+    <Image
+      src={job.logo}
+      alt={job.company}
+      width={28}
+      height={28}
+      className="h-7 w-7 object-contain"
+    />
+  );
 
   return (
     <>
       {/* Marker on axis */}
-      <Link
-        href={job.url ?? "#"}
-        target="_blank"
-        rel="noreferrer"
-        aria-label={job.company}
-        className="z-10 col-start-1 row-start-[var(--row)] -mt-2 grid h-12 w-12 place-items-center justify-self-center rounded-full border-2 border-primary-color bg-white p-2 shadow-md transition-transform hover:scale-110 dark:bg-zinc-900 md:col-start-2"
-        style={{ ["--row" as string]: index + 1 }}
-      >
-        <Image
-          src={job.logo}
-          alt={job.company}
-          width={28}
-          height={28}
-          className="h-7 w-7 object-contain"
-        />
-      </Link>
+      {job.url ? (
+        <Link
+          href={job.url}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={job.company}
+          className={markerClass}
+          style={markerStyle}
+        >
+          {logo}
+        </Link>
+      ) : (
+        <div className={markerClass} style={markerStyle} aria-label={job.company}>
+          {logo}
+        </div>
+      )}
 
       {/* Desktop: date opposite the card, hidden on mobile */}
       <div
         className={`hidden text-sm text-zinc-500 dark:text-zinc-400 md:flex md:items-start md:pt-3 ${
           isLeft ? "md:col-start-3 md:justify-start" : "md:col-start-1 md:justify-end"
         }`}
-        style={{ ["--row" as string]: index + 1, gridRow: index + 1 }}
+        style={{ gridRow: index + 1 }}
       >
         {job.date}
       </div>
@@ -100,15 +112,17 @@ function ExperienceCard({ job }: { job: Job }) {
             )
           )}
         </p>
-      ) : (
+      ) : job.url ? (
         <Link
-          href={job.url ?? "#"}
+          href={job.url}
           target="_blank"
           rel="noreferrer"
           className="mt-2 inline-block text-sm text-zinc-600 transition-colors hover:text-primary-color dark:text-zinc-400 dark:hover:text-primary-color"
         >
           {job.company}
         </Link>
+      ) : (
+        <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">{job.company}</p>
       )}
 
       <ul className="mt-5 space-y-3 text-sm text-zinc-700 dark:text-zinc-300">

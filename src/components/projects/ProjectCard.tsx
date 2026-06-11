@@ -5,7 +5,7 @@ import type { Project } from "@/types";
 import { Badge } from "@/components/shared/Badge";
 import { SpotlightLinkButton } from "@/components/shared/SpotlightButton";
 
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({ project, priority }: { project: Project; priority?: boolean }) {
   const liveHref = project.liveUrl ?? "#";
   return (
     <article className="flex flex-col overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 transition-transform duration-300 ease-out hover:-translate-y-1">
@@ -25,6 +25,7 @@ export function ProjectCard({ project }: { project: Project }) {
             alt={project.name}
             placeholder="blur"
             sizes="(min-width: 1280px) 30vw, (min-width: 768px) 45vw, 90vw"
+            priority={priority}
             className="h-[72%] w-auto object-contain drop-shadow-lg transition-transform duration-500 group-hover:scale-105"
           />
         </div>

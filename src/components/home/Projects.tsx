@@ -15,13 +15,18 @@ export function Projects() {
     (p): p is (typeof projects)[number] => Boolean(p),
   );
 
+  if (process.env.NODE_ENV !== "production" && featured.length !== FEATURED_SLUGS.length) {
+    const missing = FEATURED_SLUGS.filter((slug) => !projects.some((p) => p.slug === slug));
+    console.warn(`[Projects] Missing featured slugs: ${missing.join(", ")}`);
+  }
+
   return (
     <section className="mt-32">
       <SectionHeading eyebrow="What I build in my free time" title="Projects." />
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {featured.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
+        {featured.map((project, i) => (
+          <ProjectCard key={project.slug} project={project} priority={i === 0} />
         ))}
       </div>
 
