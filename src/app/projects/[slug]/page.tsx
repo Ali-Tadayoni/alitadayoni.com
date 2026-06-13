@@ -4,6 +4,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ExternalLink, Github } from "lucide-react";
 import { projects } from "@/data/projects";
+import { profile } from "@/data/profile";
+import { buildPageMetadata } from "@/lib/metadata";
 import { Slide } from "@/components/shared/Slide";
 
 export function generateStaticParams() {
@@ -18,7 +20,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
   if (!project) return {};
-  return { title: project.name, description: project.description };
+  return buildPageMetadata({
+    title: `${project.name} | ${profile.name}`,
+    description: project.description,
+    path: `/projects/${project.slug}`,
+  });
 }
 
 export default async function ProjectPage({

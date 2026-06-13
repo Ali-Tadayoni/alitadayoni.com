@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/global/ThemeProvider";
 import { Navbar } from "@/components/global/Navbar";
 import { Footer } from "@/components/global/Footer";
 import { profile } from "@/data/profile";
+import { SITE_DESCRIPTION } from "@/lib/metadata";
 import "./globals.css";
 
 const inter = Inter({
@@ -23,24 +24,10 @@ const display = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(profile.siteUrl),
   title: {
-    default: `${profile.name} — ${profile.role}`,
-    template: `%s — ${profile.name}`,
+    default: `${profile.name} | ${profile.role}`,
+    template: `%s | ${profile.name}`,
   },
-  description: profile.bio,
-  openGraph: {
-    title: profile.name,
-    description: profile.bio,
-    url: profile.siteUrl,
-    siteName: profile.name,
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: profile.name,
-    description: profile.bio,
-    creator: "@Tadayoni_Ali",
-  },
+  description: SITE_DESCRIPTION,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

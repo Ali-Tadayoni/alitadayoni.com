@@ -4,11 +4,14 @@ import { Bio } from "@/components/about/Bio";
 import { Tools } from "@/components/about/Tools";
 import { TechStack } from "@/components/about/TechStack";
 import { Heroes } from "@/components/about/Heroes";
+import { profile } from "@/data/profile";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "About",
-  description: "A short introduction to who I am and what I work on.",
-};
+export const metadata: Metadata = buildPageMetadata({
+  title: `About | ${profile.name}`,
+  description: "Learn more about my background, skills, and the work I focus on as a frontend engineer.",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

@@ -5,11 +5,14 @@ import { PageHeading } from "@/components/shared/PageHeading";
 import { Slide } from "@/components/shared/Slide";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import { projects } from "@/data/projects";
+import { profile } from "@/data/profile";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Projects",
-  description: "A collection of products, tools, and experiments I've worked on.",
-};
+export const metadata: Metadata = buildPageMetadata({
+  title: `Projects | ${profile.name}`,
+  description: "Explore projects built by Ali Tadayoni.",
+  path: "/projects",
+});
 
 export default function ProjectsPage() {
   return (

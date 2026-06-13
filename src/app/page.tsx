@@ -3,11 +3,12 @@ import { Hero } from "@/components/home/Hero";
 import { Experience } from "@/components/home/Experience";
 import { Projects } from "@/components/home/Projects";
 import { profile } from "@/data/profile";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: `${profile.name} — ${profile.role}`,
-  description: profile.bio,
-};
+export const metadata: Metadata = buildPageMetadata({
+  title: `${profile.name} | ${profile.role}`,
+  isHome: true,
+});
 
 export default function HomePage() {
   return (
