@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import type { ComponentPropsWithoutRef, MouseEvent, ReactNode } from "react";
+import type { ComponentPropsWithoutRef, PointerEvent, ReactNode } from "react";
 
 type Variant = "primary" | "secondary";
 
@@ -21,17 +21,19 @@ const variants: Record<Variant, string> = {
 const baseClass =
   "spotlight-btn group/btn relative inline-flex h-11 items-center justify-center gap-x-2 overflow-hidden rounded-md px-5 text-sm font-incognito font-semibold transition-shadow duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-color focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-950";
 
-function handleMove(e: MouseEvent<HTMLElement>) {
+function handleMove(e: PointerEvent<HTMLElement>) {
+  if (e.pointerType !== "mouse") return;
   const rect = e.currentTarget.getBoundingClientRect();
   e.currentTarget.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
   e.currentTarget.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
 }
 
-function handleEnter(e: MouseEvent<HTMLElement>) {
+function handleEnter(e: PointerEvent<HTMLElement>) {
+  if (e.pointerType !== "mouse") return;
   e.currentTarget.style.setProperty("--spot-opacity", "1");
 }
 
-function handleLeave(e: MouseEvent<HTMLElement>) {
+function handleLeave(e: PointerEvent<HTMLElement>) {
   e.currentTarget.style.setProperty("--spot-opacity", "0");
 }
 
@@ -53,9 +55,9 @@ export function SpotlightLinkButton({
     <Link
       href={href}
       className={`${baseClass} ${variants[variant]} ${className}`}
-      onMouseMove={handleMove}
-      onMouseEnter={handleEnter}
-      onMouseLeave={handleLeave}
+      onPointerMove={handleMove}
+      onPointerEnter={handleEnter}
+      onPointerLeave={handleLeave}
       {...rest}
     >
       <span className="relative z-10 inline-flex items-center gap-x-2">{children}</span>
@@ -74,9 +76,9 @@ export function SpotlightButton({
   return (
     <button
       className={`${baseClass} ${variants[variant]} ${className}`}
-      onMouseMove={handleMove}
-      onMouseEnter={handleEnter}
-      onMouseLeave={handleLeave}
+      onPointerMove={handleMove}
+      onPointerEnter={handleEnter}
+      onPointerLeave={handleLeave}
       {...rest}
     >
       <span className="relative z-10 inline-flex items-center gap-x-2">{children}</span>

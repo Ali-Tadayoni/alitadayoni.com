@@ -128,23 +128,25 @@ h1, h2, h3, h4 {
   --mouse-y: 50%;
   --spot-opacity: 0;
 }
-.spotlight-btn::before {
-  content: "";
-  position: absolute;
-  left: var(--mouse-x);
-  top: var(--mouse-y);
-  width: 220px;
-  height: 220px;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  opacity: var(--spot-opacity);
-  transition: opacity 0.25s ease;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.55) 0%,
-    rgba(255, 255, 255, 0.2) 40%,
-    rgba(255, 255, 255, 0) 70%
-  );
+@media (hover: hover) and (pointer: fine) {
+  .spotlight-btn::before {
+    content: "";
+    position: absolute;
+    left: var(--mouse-x);
+    top: var(--mouse-y);
+    width: 220px;
+    height: 220px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    opacity: var(--spot-opacity);
+    transition: opacity 0.25s ease;
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.55) 0%,
+      rgba(255, 255, 255, 0.2) 40%,
+      rgba(255, 255, 255, 0) 70%
+    );
+  }
 }
 
 /* Tools marquee */

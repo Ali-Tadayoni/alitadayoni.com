@@ -18,10 +18,6 @@ export const heroes: Hero[] = [
     url: "https://github.com/getify",
   },
   {
-    name: "Mohammadreza Namjoo",
-    url: "https://github.com/mohammadrezanamjoo",
-  },
-  {
     name: "Jhey Tompkins",
     url: "https://github.com/jh3y",
   },

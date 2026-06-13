@@ -4,6 +4,7 @@ import { Bio } from "@/components/about/Bio";
 import { Tools } from "@/components/about/Tools";
 import { TechStack } from "@/components/about/TechStack";
 import { Heroes } from "@/components/about/Heroes";
+import { Acknowledgements } from "@/components/about/Acknowledgements";
 import { profile } from "@/data/profile";
 import { buildPageMetadata } from "@/lib/metadata";
 
@@ -22,6 +23,7 @@ export default function AboutPage() {
       </Slide>
       <TechStack />
       <Heroes />
+      <Acknowledgements />
     </main>
   );
 }
