@@ -23,7 +23,6 @@ export const profile: Profile = {
   socials: [
     { name: "GitHub", url: "https://github.com/Ali-Tadayoni", icon: "github" },
     { name: "LinkedIn", url: "https://www.linkedin.com/in/ali-tadayoni", icon: "linkedin" },
-    { name: "X", url: "https://x.com/Tadayyoni_Ali", icon: "twitter" },
     { name: "Email", url: "mailto:tadayoni.ali.enayat@gmail.com", icon: "mail" },
   ],
 };
