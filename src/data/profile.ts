@@ -17,7 +17,8 @@ export const profile: Profile = {
     "Looking ahead, my goal is to continue expanding my expertise and grow into a well-rounded full-stack software engineer. I'm always eager to learn, take on new challenges, and keep building better products.",
   ],
   email: "tadayoni.ali.enayat@gmail.com",
-  resumeUrl: "https://raw.githubusercontent.com/Ali-Tadayoni/Resume/main/Ali%20Tadayoni%20Resume%202026.pdf",
+  resumeUrl:
+    "https://raw.githubusercontent.com/Ali-Tadayoni/Resume/main/Ali%20Tadayoni%20-%20Frontend%20Engineer%20Resume.pdf",
   location: "Toronto, Canada",
   avatarUrl: "/ali-tadayoni.jpeg",
   socials: [
