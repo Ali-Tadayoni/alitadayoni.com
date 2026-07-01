@@ -18,7 +18,7 @@ export const profile: Profile = {
   ],
   email: "tadayoni.ali.enayat@gmail.com",
   resumeUrl:
-    "https://raw.githubusercontent.com/Ali-Tadayoni/Resume/main/Ali%20Tadayoni%20-%20Frontend%20Engineer%20Resume.pdf",
+    "https://raw.githubusercontent.com/Ali-Tadayoni/Resume/main/Ali%20Tadayoni%20-%20Frontend%Developer%20Resume.pdf",
   location: "Toronto, Canada",
   avatarUrl: "/ali-tadayoni.jpeg",
   socials: [
